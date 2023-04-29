@@ -19,7 +19,7 @@ def main():
 
     im = Image.open('1.jpg')
     im = transform(im)  # [C, H, W]
-    im = torch.unsqueeze(im, dim=0)  # [N, C, H, W]
+    im = torch.unsqueeze(im, dim=0)  # [N, C, H, W] dim = 0指在最前面添加一个维度
 
     with torch.no_grad():
         outputs = net(im)
